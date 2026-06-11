@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+@import "tailwindcss";
+
+
+
+:root {
+  --navy: #0a0f1e;
+  --navy-2: #0d1428;
+  --navy-3: #111827;
+  --violet: #7c3aed;
+  --violet-light: #a78bfa;
+  --cyan: #06b6d4;
+  --cyan-light: #67e8f9;
+  --text: #f0f4ff;
+  --text-muted: #94a3b8;
+  --glass: rgba(255,255,255,0.04);
+  --glass-border: rgba(255,255,255,0.08);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--navy);
+  color: var(--text);
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--navy); }
+::-webkit-scrollbar-thumb { background: var(--violet); border-radius: 3px; }
+
+.gradient-text {
+  background: linear-gradient(135deg, var(--violet-light), var(--cyan));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Global section spacing */
+section {
+  padding: 3rem 1.5rem;
+  margin: 0;
+}
+
+@media (max-width: 1024px) {
+  section {
+    padding: 2rem 1rem;
+  }
+}
+
+/* Reduce glass-card internal padding for cleaner look */
+.glass-card {
+  padding: 1rem;
+  background: var(--glass);
+  backdrop-filter: blur(12px);
+}
+
+.glow-violet { box-shadow: 0 0 30px rgba(124,58,237,0.3); }
+.glow-cyan { box-shadow: 0 0 30px rgba(6,182,212,0.3); }
+
+.section-label {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--cyan);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}
