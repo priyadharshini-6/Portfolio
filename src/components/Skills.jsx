@@ -6,18 +6,14 @@ const skillCategories = [
   {
     title: 'Programming Languages',
     color: '#7c3aed',
-    skills: ['Python', 'Java'],
+    skills: ['Python', 'SQL'],
   },
   {
     title: 'CS Fundamentals',
     color: '#06b6d4',
     skills: ['Data Structures & Algorithms', 'DBMS', 'Computer Networks', 'Operating Systems'],
   },
-  {
-    title: 'Web Technologies',
-    color: '#a78bfa',
-    skills: ['HTML', 'CSS', 'JavaScript', 'React.js', 'Node.js', 'Express.js'],
-  },
+ 
   {
     title: 'Databases',
     color: '#22d3ee',
