@@ -4,25 +4,24 @@ import { useRef } from 'react';
 
 const skillCategories = [
   {
-    title: 'Programming Languages',
+    title: 'Languages',
     color: '#7c3aed',
     skills: ['Python', 'SQL'],
   },
   {
-    title: 'CS Fundamentals',
+    title: 'AI Technologies',
     color: '#06b6d4',
-    skills: ['Data Structures & Algorithms', 'DBMS', 'Computer Networks', 'Operating Systems'],
+    skills: ['RAG Systems', 'LLM Integration', 'Knowledge Graphs'],
   },
- 
   {
     title: 'Databases',
     color: '#22d3ee',
-    skills: ['Neo4j', 'MongoDB', 'MySQL'],
+    skills: ['MongoDB', 'Neo4j', 'SQL', 'PL/SQL'],
   },
   {
-    title: 'AI & Tools',
+    title: 'Tools & Platforms',
     color: '#8b5cf6',
-    skills: ['Machine Learning', 'Knowledge Graphs', 'Ollama', 'AI Model Integration', 'Prompt Engineering'],
+    skills: ['Git', 'GitHub', 'Jupyter Notebook', 'VS Code'],
   },
 ];
 
@@ -45,7 +44,7 @@ export default function Skills() {
           </h2>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {skillCategories.map((cat, ci) => (
             <motion.div
               key={cat.title}
@@ -55,7 +54,7 @@ export default function Skills() {
               className="glass-card"
               whileHover={{ y: -5 }}
               style={{
-                borderRadius: '16px', padding: '1.75rem',
+                borderRadius: '16px', padding: '1.5rem',
                 borderColor: `${cat.color}20`,
                 transition: 'transform 0.2s, border-color 0.2s, box-shadow 0.2s',
               }}
