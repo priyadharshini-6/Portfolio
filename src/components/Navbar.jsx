@@ -140,7 +140,7 @@ export default function Navbar() {
               </a>
             );
           })}
-          <a href="https://drive.google.com/file/d/1piRaBRjM2j1v0PmT7w9S7Wqtx_y1aWoJ/view" target="_blank" rel="noreferrer"
+          <a href="https://drive.google.com/file/d/131AzatJCvlCrwCVYd9CBG8LCPAZiNik0/view" target="_blank" rel="noreferrer"
             style={{
               padding: '0.5rem 1.25rem', borderRadius: '8px', fontSize: '0.875rem',
               background: 'var(--accent, #3b82f6)',
@@ -209,7 +209,7 @@ export default function Navbar() {
                 </a>
               );
             })}
-            <a href="https://drive.google.com/file/d/1piRaBRjM2j1v0PmT7w9S7Wqtx_y1aWoJ/view" target="_blank" rel="noreferrer"
+            <a href="https://drive.google.com/file/d/131AzatJCvlCrwCVYd9CBG8LCPAZiNik0/view" target="_blank" rel="noreferrer"
               style={{
                 color: 'var(--accent, #3b82f6)',
                 textDecoration: 'none',
