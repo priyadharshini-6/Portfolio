@@ -7,19 +7,20 @@ export default function Hero() {
     <section id="hero" style={{
       position: 'relative', minHeight: '100vh', display: 'flex',
       alignItems: 'center', justifyContent: 'center',
-      background: 'radial-gradient(ellipse 80% 60% at 50% 0%, rgba(124,58,237,0.12) 0%, transparent 70%)',
+      background: 'var(--bg, #0a0a0b)',
+      color: 'var(--text, #f4f4f5)',
       overflow: 'hidden',
     }}>
 
       {/* Gradient orbs */}
       <div style={{
         position: 'absolute', width: '600px', height: '600px', borderRadius: '50%',
-        background: 'radial-gradient(circle, rgba(124,58,237,0.08) 0%, transparent 70%)',
+        background: 'transparent',
         top: '-200px', left: '-200px', pointerEvents: 'none',
       }} />
       <div style={{
         position: 'absolute', width: '500px', height: '500px', borderRadius: '50%',
-        background: 'radial-gradient(circle, rgba(6,182,212,0.06) 0%, transparent 70%)',
+        background: 'transparent',
         bottom: '-100px', right: '-100px', pointerEvents: 'none',
       }} />
 
@@ -32,7 +33,7 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-         
+
         </motion.div>
 
         <motion.h1
@@ -42,9 +43,18 @@ export default function Hero() {
           style={{
             fontFamily: 'Space Grotesk', fontSize: 'clamp(2.8rem, 7vw, 5.5rem)',
             fontWeight: 700, lineHeight: 1.1, marginBottom: '1rem',
+            color: 'var(--text, #f4f4f5)',
           }}
         >
-          Hi, I'm <span className="gradient-text">Priyadharshini</span>
+          Hi, I'm <span className="gradient-text" style={{
+            color: 'var(--accent, #3b82f6)',
+            background: 'none',
+            backgroundImage: 'none',
+            WebkitBackgroundClip: 'unset',
+            backgroundClip: 'unset',
+            WebkitTextFillColor: 'var(--accent, #3b82f6)',
+            textShadow: 'none',
+          }}>Priyadharshini</span>
         </motion.h1>
 
         <motion.div
@@ -54,17 +64,17 @@ export default function Hero() {
         >
           <h2 style={{
             fontFamily: 'Space Grotesk', fontSize: 'clamp(1.2rem, 3vw, 1.75rem)',
-            fontWeight: 500, color: 'var(--text-muted)', marginBottom: '1.5rem',
+            fontWeight: 500, color: 'var(--text-muted, #9a9aa3)', marginBottom: '1.5rem',
           }}>
             AI & Software Developer
           </h2>
           <p style={{
-            fontSize: '1.05rem', color: 'var(--text-muted)', lineHeight: 1.7,
+            fontSize: '1.05rem', color: 'var(--text-muted, #9a9aa3)', lineHeight: 1.7,
             maxWidth: '640px', margin: '0 auto 2.5rem',
           }}>
             Passionate about building intelligent solutions that bridge
-            <span style={{ color: 'var(--violet-light)' }}> Artificial Intelligence</span> and
-            <span style={{ color: 'var(--cyan)' }}> Software Engineering</span>.
+            <span style={{ color: 'var(--accent, #3b82f6)' }}> Artificial Intelligence</span> and
+            <span style={{ color: 'var(--accent, #3b82f6)' }}> Software Engineering</span>.
           </p>
         </motion.div>
 
@@ -77,41 +87,68 @@ export default function Hero() {
           <a href="#contact"
             style={{
               padding: '0.85rem 1.75rem', borderRadius: '10px', textDecoration: 'none',
-              background: 'linear-gradient(135deg, var(--violet), #5b21b6)',
-              color: 'white', fontFamily: 'Space Grotesk', fontWeight: 600, fontSize: '0.95rem',
+              background: 'var(--accent, #3b82f6)',
+              color: '#ffffff', fontFamily: 'Space Grotesk', fontWeight: 600, fontSize: '0.95rem',
               display: 'flex', alignItems: 'center', gap: '0.5rem',
-              boxShadow: '0 0 25px rgba(124,58,237,0.35)',
-              transition: 'transform 0.2s, box-shadow 0.2s',
+              border: '1px solid var(--accent, #3b82f6)',
+              boxShadow: 'none',
+              transition: 'transform 0.2s, background 0.2s',
             }}
-            onMouseEnter={e => { e.currentTarget.style.transform = 'translateY(-2px)'; e.currentTarget.style.boxShadow = '0 0 35px rgba(124,58,237,0.5)'; }}
-            onMouseLeave={e => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.boxShadow = '0 0 25px rgba(124,58,237,0.35)'; }}
+            onMouseEnter={e => {
+              e.currentTarget.style.transform = 'translateY(-2px)';
+              e.currentTarget.style.background = 'var(--accent-hover, #60a5fa)';
+            }}
+            onMouseLeave={e => {
+              e.currentTarget.style.transform = 'translateY(0)';
+              e.currentTarget.style.background = 'var(--accent, #3b82f6)';
+            }}
           >
             <Mail size={16} /> Contact Me
           </a>
           <a href="#projects"
             style={{
               padding: '0.85rem 1.75rem', borderRadius: '10px', textDecoration: 'none',
-              background: 'transparent', color: 'var(--cyan)',
-              border: '1px solid rgba(6,182,212,0.4)',
+              background: 'transparent',
+              color: 'var(--text, #f4f4f5)',
+              border: '1px solid var(--line, #232327)',
               fontFamily: 'Space Grotesk', fontWeight: 600, fontSize: '0.95rem',
-              transition: 'background 0.2s, transform 0.2s',
+              transition: 'background 0.2s, transform 0.2s, border-color 0.2s',
+              boxShadow: 'none',
             }}
-            onMouseEnter={e => { e.currentTarget.style.background = 'rgba(6,182,212,0.08)'; e.currentTarget.style.transform = 'translateY(-2px)'; }}
-            onMouseLeave={e => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.transform = 'translateY(0)'; }}
+            onMouseEnter={e => {
+              e.currentTarget.style.background = 'var(--accent-soft, rgba(59,130,246,0.10))';
+              e.currentTarget.style.borderColor = 'var(--accent-border, rgba(59,130,246,0.30))';
+              e.currentTarget.style.transform = 'translateY(-2px)';
+            }}
+            onMouseLeave={e => {
+              e.currentTarget.style.background = 'transparent';
+              e.currentTarget.style.borderColor = 'var(--line, #232327)';
+              e.currentTarget.style.transform = 'translateY(0)';
+            }}
           >
             View Projects
           </a>
           <a href="https://drive.google.com/file/d/1piRaBRjM2j1v0PmT7w9S7Wqtx_y1aWoJ/view" target="_blank" rel="noreferrer"
             style={{
               padding: '0.85rem 1.75rem', borderRadius: '10px', textDecoration: 'none',
-              background: 'rgba(255,255,255,0.05)', color: 'var(--text)',
-              border: '1px solid rgba(255,255,255,0.1)',
+              background: 'var(--surface, #111113)',
+              color: 'var(--text, #f4f4f5)',
+              border: '1px solid var(--line, #232327)',
               fontFamily: 'Space Grotesk', fontWeight: 600, fontSize: '0.95rem',
               display: 'flex', alignItems: 'center', gap: '0.5rem',
-              transition: 'background 0.2s, transform 0.2s',
+              boxShadow: 'none',
+              transition: 'background 0.2s, transform 0.2s, border-color 0.2s',
             }}
-            onMouseEnter={e => { e.currentTarget.style.background = 'rgba(255,255,255,0.08)'; e.currentTarget.style.transform = 'translateY(-2px)'; }}
-            onMouseLeave={e => { e.currentTarget.style.background = 'rgba(255,255,255,0.05)'; e.currentTarget.style.transform = 'translateY(0)'; }}
+            onMouseEnter={e => {
+              e.currentTarget.style.background = 'var(--accent-soft, rgba(59,130,246,0.10))';
+              e.currentTarget.style.borderColor = 'var(--accent-border, rgba(59,130,246,0.30))';
+              e.currentTarget.style.transform = 'translateY(-2px)';
+            }}
+            onMouseLeave={e => {
+              e.currentTarget.style.background = 'var(--surface, #111113)';
+              e.currentTarget.style.borderColor = 'var(--line, #232327)';
+              e.currentTarget.style.transform = 'translateY(0)';
+            }}
           >
             <Download size={16} /> Resume
           </a>
@@ -133,12 +170,23 @@ export default function Hero() {
               style={{
                 width: '44px', height: '44px', borderRadius: '10px', display: 'flex',
                 alignItems: 'center', justifyContent: 'center',
-                background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)',
-                color: 'var(--text-muted)', textDecoration: 'none',
-                transition: 'all 0.2s',
+                background: 'var(--surface, #111113)',
+                border: '1px solid var(--line, #232327)',
+                color: 'var(--text-muted, #9a9aa3)',
+                textDecoration: 'none',
+                boxShadow: 'none',
+                transition: 'color 0.2s, border-color 0.2s, background 0.2s',
               }}
-              onMouseEnter={e => { e.currentTarget.style.color = 'var(--cyan)'; e.currentTarget.style.borderColor = 'rgba(6,182,212,0.4)'; e.currentTarget.style.background = 'rgba(6,182,212,0.08)'; }}
-              onMouseLeave={e => { e.currentTarget.style.color = 'var(--text-muted)'; e.currentTarget.style.borderColor = 'rgba(255,255,255,0.1)'; e.currentTarget.style.background = 'rgba(255,255,255,0.05)'; }}
+              onMouseEnter={e => {
+                e.currentTarget.style.color = 'var(--accent-hover, #60a5fa)';
+                e.currentTarget.style.borderColor = 'var(--accent-border, rgba(59,130,246,0.30))';
+                e.currentTarget.style.background = 'var(--accent-soft, rgba(59,130,246,0.10))';
+              }}
+              onMouseLeave={e => {
+                e.currentTarget.style.color = 'var(--text-muted, #9a9aa3)';
+                e.currentTarget.style.borderColor = 'var(--line, #232327)';
+                e.currentTarget.style.background = 'var(--surface, #111113)';
+              }}
             >
               {s.icon}
             </a>
@@ -151,7 +199,15 @@ export default function Hero() {
           transition={{ duration: 1, delay: 1 }}
           style={{ marginTop: '4rem' }}
         >
-          <a href="#about" style={{ color: 'var(--text-muted)', display: 'inline-flex', flexDirection: 'column', alignItems: 'center', gap: '0.5rem', textDecoration: 'none' }}>
+          <a href="#about" style={{
+            color: 'var(--text-muted, #9a9aa3)',
+            display: 'inline-flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            gap: '0.5rem',
+            textDecoration: 'none',
+            transition: 'color 0.2s',
+          }}>
             <motion.div animate={{ y: [0, 6, 0] }} transition={{ repeat: Infinity, duration: 2 }}>
               <ArrowDown size={20} />
             </motion.div>
