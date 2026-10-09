@@ -4,22 +4,8 @@ import { useRef } from 'react';
 import { Briefcase, Calendar } from 'lucide-react';
 
 const experiences = [
-  {
-    title: 'Full Stack Developer Intern',
-    company: 'Synnoviq Technologies Pvt. Ltd.',
-    location: 'Kovilpatti',
-    period: 'June 2025 – May 2026',
-    color: '#7c3aed',
-    current: true,
-    points: [
-      'Developed and maintained dynamic web applications using React.js, Node.js, Express.js, and MongoDB.',
-      'Built backend services to handle client requests and integrated them with frontend interfaces.',
-      'Implemented CRUD operations and managed database schemas for efficient data handling.',
-      'Collaborated on application development and performance optimization initiatives.',
-    ],
-    tags: ['React.js', 'Node.js', 'MongoDB', 'Express.js'],
-  },
-  {
+
+   {
     title: 'AI Developer Intern',
     company: 'Infosys Springboard',
     location: 'Virtual',
@@ -34,6 +20,22 @@ const experiences = [
     ],
     tags: ['Neo4j', 'Python', 'Ollama', 'Knowledge Graphs'],
   },
+  {
+    title: 'AI Augmented Full Stack Developer Intern',
+    company: 'Synnoviq Technologies Pvt. Ltd.',
+    location: 'Kovilpatti',
+    period: 'June 2025 – May 2026',
+    color: '#7c3aed',
+    current: true,
+    points: [
+      'Developed and maintained dynamic web applications using React.js, Node.js, Express.js, and MongoDB.',
+      'Built backend services to handle client requests and integrated them with frontend interfaces.',
+      'Implemented CRUD operations and managed database schemas for efficient data handling.',
+      'Collaborated on application development and performance optimization initiatives.',
+    ],
+    tags: ['React.js', 'Node.js', 'MongoDB', 'Express.js'],
+  },
+ 
 ];
 
 export default function Experience() {
