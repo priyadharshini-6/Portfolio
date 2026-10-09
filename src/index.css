@@ -77,3 +77,36 @@ section {
 @media (prefers-reduced-motion: reduce) {
   *, ::before, ::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
 }
+
+/* ===== Soft light grey theme ===== */
+:root {
+  --bg: #f1f3f5;
+  --surface: #ffffff;
+  --text: #1f2933;
+  --text-muted: #5f6b7a;
+  --line: #d9dee4;
+  --accent: #3f5f8a;
+}
+
+html,
+body {
+  background: var(--bg);
+  color: var(--text);
+}
+
+.glass-card {
+  background: var(--surface) !important;
+  border: 1px solid var(--line);
+  box-shadow: 0 1px 2px rgba(31, 41, 51, 0.05);
+  backdrop-filter: none !important;
+}
+
+.gradient-text {
+  background: none !important;
+  -webkit-text-fill-color: currentColor !important;
+  color: var(--accent) !important;
+}
+
+.section-label {
+  color: var(--accent) !important;
+}
