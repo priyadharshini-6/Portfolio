@@ -24,7 +24,7 @@ const achievements = [
   },
   {
     place: '3rd',
-    emoji: '🥉',
+  
     event: 'Ideathon Event',
     venue: 'RV University, Bangalore',
     color: '#cd7f32',
