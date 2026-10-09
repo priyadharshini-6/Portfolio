@@ -71,15 +71,28 @@ export default function Navbar() {
       style={{
         position: 'fixed', top: 0, left: 0, right: 0, zIndex: 100,
         padding: '0 1.5rem',
-        background: scrolled ? 'rgba(10,15,30,0.85)' : 'transparent',
+        background: scrolled ? 'rgba(10,10,11,0.95)' : 'transparent',
         backdropFilter: scrolled ? 'blur(20px)' : 'none',
-        borderBottom: scrolled ? '1px solid rgba(255,255,255,0.06)' : 'none',
+        borderBottom: scrolled ? '1px solid var(--line, #232327)' : 'none',
         transition: 'all 0.4s ease',
       }}
     >
       <div style={{ maxWidth: '1200px', margin: '0 auto', display: 'flex', alignItems: 'center', justifyContent: 'space-between', height: '68px' }}>
         <a href="#hero" style={{ fontFamily: 'Space Grotesk', fontWeight: 700, fontSize: '1.2rem', textDecoration: 'none' }}>
-          <span className="gradient-text">PR</span>
+          <span
+            className="gradient-text"
+            style={{
+              color: 'var(--accent, #3b82f6)',
+              background: 'none',
+              backgroundImage: 'none',
+              WebkitBackgroundClip: 'unset',
+              backgroundClip: 'unset',
+              WebkitTextFillColor: 'var(--accent, #3b82f6)',
+              textShadow: 'none',
+            }}
+          >
+            PR
+          </span>
         </a>
 
         {/* Desktop */}
@@ -91,7 +104,7 @@ export default function Navbar() {
                 key={l.label}
                 href={l.href}
                 style={{
-                  color: isActive ? 'var(--cyan)' : 'var(--text-muted)',
+                  color: isActive ? 'var(--accent, #3b82f6)' : 'var(--text-muted, #9a9aa3)',
                   fontSize: '0.875rem',
                   textDecoration: 'none',
                   fontFamily: 'Space Grotesk',
@@ -100,11 +113,11 @@ export default function Navbar() {
                   position: 'relative',
                   padding: '0.25rem 0',
                 }}
-                onMouseEnter={e => e.target.style.color = 'var(--cyan)'}
+                onMouseEnter={e => e.target.style.color = 'var(--accent-hover, #60a5fa)'}
                 onMouseLeave={e => {
-                  if (!isActive) {
-                    e.target.style.color = 'var(--text-muted)';
-                  }
+                  e.target.style.color = isActive
+                    ? 'var(--accent, #3b82f6)'
+                    : 'var(--text-muted, #9a9aa3)';
                 }}
               >
                 {l.label}
@@ -117,8 +130,8 @@ export default function Navbar() {
                       left: 0,
                       right: 0,
                       height: '2px',
-                      background: 'var(--cyan)',
-                      boxShadow: '0 0 8px var(--cyan)',
+                      background: 'var(--accent, #3b82f6)',
+                      boxShadow: 'none',
                       borderRadius: '2px',
                     }}
                     transition={{ type: 'spring', stiffness: 380, damping: 30 }}
@@ -130,8 +143,13 @@ export default function Navbar() {
           <a href="https://drive.google.com/file/d/1piRaBRjM2j1v0PmT7w9S7Wqtx_y1aWoJ/view" target="_blank" rel="noreferrer"
             style={{
               padding: '0.5rem 1.25rem', borderRadius: '8px', fontSize: '0.875rem',
-              background: 'linear-gradient(135deg, var(--violet), #5b21b6)',
-              color: 'white', textDecoration: 'none', fontFamily: 'Space Grotesk', fontWeight: 600,
+              background: 'var(--accent, #3b82f6)',
+              color: '#ffffff',
+              textDecoration: 'none',
+              fontFamily: 'Space Grotesk',
+              fontWeight: 600,
+              border: '1px solid var(--accent, #3b82f6)',
+              boxShadow: 'none',
               transition: 'opacity 0.2s',
             }}
             onMouseEnter={e => e.target.style.opacity = '0.85'}
@@ -140,7 +158,16 @@ export default function Navbar() {
         </div>
 
         {/* Mobile burger */}
-        <button onClick={() => setOpen(!open)} style={{ background: 'none', border: 'none', color: 'var(--text)', cursor: 'pointer' }} className="md:hidden block">
+        <button
+          onClick={() => setOpen(!open)}
+          style={{
+            background: 'none',
+            border: 'none',
+            color: 'var(--text, #f4f4f5)',
+            cursor: 'pointer',
+          }}
+          className="md:hidden block"
+        >
           {open ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
@@ -154,8 +181,10 @@ export default function Navbar() {
             exit={{ opacity: 0, y: -20 }}
             style={{
               position: 'absolute', top: '68px', left: 0, right: 0,
-              background: 'rgba(10,15,30,0.97)', borderBottom: '1px solid rgba(255,255,255,0.06)',
+              background: 'var(--surface, #111113)',
+              borderBottom: '1px solid var(--line, #232327)',
               padding: '1.5rem', display: 'flex', flexDirection: 'column', gap: '1.25rem',
+              boxShadow: 'none',
             }}
           >
             {links.map(l => {
@@ -166,12 +195,12 @@ export default function Navbar() {
                   href={l.href}
                   onClick={() => setOpen(false)}
                   style={{
-                    color: isActive ? 'var(--cyan)' : 'var(--text)',
+                    color: isActive ? 'var(--accent, #3b82f6)' : 'var(--text, #f4f4f5)',
                     textDecoration: 'none',
                     fontFamily: 'Space Grotesk',
                     fontWeight: isActive ? 600 : 500,
                     fontSize: '1rem',
-                    borderLeft: isActive ? '3px solid var(--cyan)' : 'none',
+                    borderLeft: isActive ? '3px solid var(--accent, #3b82f6)' : 'none',
                     paddingLeft: isActive ? '0.75rem' : '0',
                     transition: 'all 0.2s ease',
                   }}
@@ -181,7 +210,12 @@ export default function Navbar() {
               );
             })}
             <a href="https://drive.google.com/file/d/1piRaBRjM2j1v0PmT7w9S7Wqtx_y1aWoJ/view" target="_blank" rel="noreferrer"
-              style={{ color: 'var(--cyan)', textDecoration: 'none', fontFamily: 'Space Grotesk', fontWeight: 600 }}>
+              style={{
+                color: 'var(--accent, #3b82f6)',
+                textDecoration: 'none',
+                fontFamily: 'Space Grotesk',
+                fontWeight: 600,
+              }}>
               Download Resume ↗
             </a>
           </motion.div>
