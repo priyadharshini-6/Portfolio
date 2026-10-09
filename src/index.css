@@ -80,3 +80,58 @@ section {
 
 /* ===== Soft light grey theme ===== */
 /* ===== Professional theme (change colours here only) ===== */
+
+
+/* ===== Dark theme, single blue accent (change colours here only) ===== */
+:root {
+  --bg: #0a0a0b;
+  --surface: #111113;
+  --line: #232327;
+  --text: #f4f4f5;
+  --text-muted: #9a9aa3;
+  --accent: #3b82f6;
+  --accent-hover: #60a5fa;
+  --accent-soft: rgba(59, 130, 246, 0.1);
+  --accent-border: rgba(59, 130, 246, 0.3);
+}
+
+html,
+body {
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* Faint grid, like your reference */
+body {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 48px 48px;
+  background-attachment: fixed;
+}
+
+/* Hides the purple floating-dots background */
+canvas {
+  display: none !important;
+}
+
+.glass-card {
+  background: var(--surface) !important;
+  border: 1px solid var(--line);
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  transition: border-color 0.2s;
+}
+.glass-card:hover {
+  border-color: var(--accent-border);
+}
+
+.gradient-text {
+  background: none !important;
+  -webkit-text-fill-color: currentColor !important;
+  color: var(--accent) !important;
+}
+
+.section-label {
+  color: var(--accent) !important;
+}
