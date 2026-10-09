@@ -79,13 +79,18 @@ section {
 }
 
 /* ===== Soft light grey theme ===== */
+/* ===== Professional theme (change colours here only) ===== */
 :root {
-  --bg: #f1f3f5;
+  --bg: #f8fafc;
   --surface: #ffffff;
-  --text: #1f2933;
-  --text-muted: #5f6b7a;
-  --line: #d9dee4;
-  --accent: #3f5f8a;
+  --text: #0f172a;
+  --text-muted: #475569;
+  --line: #e2e8f0;
+  --accent: #2563eb;
+  --accent-soft: #eff6ff;
+  --accent-border: #bfdbfe;
+  --shadow: 0 1px 2px rgba(15, 23, 42, 0.04), 0 4px 16px rgba(15, 23, 42, 0.04);
+  --shadow-hover: 0 12px 32px rgba(37, 99, 235, 0.12);
 }
 
 html,
@@ -97,7 +102,7 @@ body {
 .glass-card {
   background: var(--surface) !important;
   border: 1px solid var(--line);
-  box-shadow: 0 1px 2px rgba(31, 41, 51, 0.05);
+  box-shadow: var(--shadow);
   backdrop-filter: none !important;
 }
 
