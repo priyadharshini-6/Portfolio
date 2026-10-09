@@ -59,7 +59,7 @@ export default function Contact() {
   ];
 
   return (
-    <section id="contact" ref={ref} style={{ padding: '4rem 1.5rem' }}>
+    <section id="contact" ref={ref} style={{ padding: '4rem 1.5rem', background: 'var(--bg, #0a0a0b)', color: 'var(--text, #f4f4f5)' }}>
       <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -67,11 +67,11 @@ export default function Contact() {
           transition={{ duration: 0.6 }}
           style={{ marginBottom: '2rem', textAlign: 'center' }}
         >
-          <span className="section-label" style={{ marginBottom: '0.75rem', display: 'block' }}>Get In Touch</span>
-          <h2 style={{ fontFamily: 'Space Grotesk', fontSize: 'clamp(2rem, 4vw, 3rem)', fontWeight: 700, marginBottom: '1rem' }}>
-            Let's <span className="gradient-text">Connect</span>
+          <span className="section-label" style={{ marginBottom: '0.75rem', display: 'block', color: 'var(--accent, #3b82f6)' }}>Get In Touch</span>
+          <h2 style={{ fontFamily: 'Space Grotesk', fontSize: 'clamp(2rem, 4vw, 3rem)', fontWeight: 700, marginBottom: '1rem', color: 'var(--text, #f4f4f5)' }}>
+            Let's <span className="gradient-text" style={{ color: 'var(--accent, #3b82f6)', background: 'none', backgroundImage: 'none', WebkitBackgroundClip: 'unset', backgroundClip: 'unset', WebkitTextFillColor: 'var(--accent, #3b82f6)' }}>Connect</span>
           </h2>
-          <p style={{ color: 'var(--text-muted)', maxWidth: '520px', margin: '0 auto', lineHeight: 1.7 }}>
+          <p style={{ color: 'var(--text-muted, #9a9aa3)', maxWidth: '520px', margin: '0 auto', lineHeight: 1.7 }}>
             Open to internship opportunities, collaborations, and interesting projects. Feel free to reach out!
           </p>
         </motion.div>
@@ -83,7 +83,7 @@ export default function Contact() {
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.1 }}
           >
-            <h3 style={{ fontFamily: 'Space Grotesk', fontSize: '1.2rem', fontWeight: 700, marginBottom: '1.5rem' }}>
+            <h3 style={{ fontFamily: 'Space Grotesk', fontSize: '1.2rem', fontWeight: 700, marginBottom: '1.5rem', color: 'var(--text, #f4f4f5)' }}>
               Contact Details
             </h3>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '0.85rem' }}>
@@ -94,25 +94,38 @@ export default function Contact() {
                   animate={inView ? { opacity: 1, x: 0 } : {}}
                   transition={{ delay: 0.15 + i * 0.08 }}
                   className="glass-card"
-                  style={{ borderRadius: '12px', padding: '1rem 1.25rem', display: 'flex', alignItems: 'center', gap: '1rem' }}
+                  style={{
+                    borderRadius: '12px',
+                    padding: '1rem 1.25rem',
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '1rem',
+                    backgroundColor: 'var(--surface, #111113)',
+                    border: '1px solid var(--line, #232327)',
+                    boxShadow: 'none',
+                    transition: 'border-color 0.2s',
+                  }}
+                  whileHover={{ borderColor: 'var(--accent-border, rgba(59,130,246,0.30))' }}
                 >
                   <div style={{
                     width: '38px', height: '38px', borderRadius: '10px', flexShrink: 0,
-                    background: 'linear-gradient(135deg, rgba(124,58,237,0.18), rgba(6,182,212,0.12))',
-                    display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--cyan)',
+                    background: 'var(--accent-soft, rgba(59,130,246,0.10))',
+                    border: '1px solid var(--accent-border, rgba(59,130,246,0.30))',
+                    display: 'flex', alignItems: 'center', justifyContent: 'center',
+                    color: 'var(--accent, #3b82f6)',
                   }}>
                     {c.icon}
                   </div>
                   <div>
-                    <p style={{ color: 'var(--text-muted)', fontSize: '0.75rem', marginBottom: '0.15rem' }}>{c.label}</p>
+                    <p style={{ color: 'var(--text-muted, #9a9aa3)', fontSize: '0.75rem', marginBottom: '0.15rem' }}>{c.label}</p>
                     {c.href ? (
                       <a href={c.href} target={c.href.startsWith('http') ? '_blank' : undefined} rel="noreferrer"
-                        style={{ color: 'var(--text)', fontSize: '0.88rem', textDecoration: 'none', fontFamily: 'Space Grotesk', fontWeight: 500, transition: 'color 0.2s' }}
-                        onMouseEnter={e => e.target.style.color = 'var(--cyan)'}
-                        onMouseLeave={e => e.target.style.color = 'var(--text)'}
+                        style={{ color: 'var(--text, #f4f4f5)', fontSize: '0.88rem', textDecoration: 'none', fontFamily: 'Space Grotesk', fontWeight: 500, transition: 'color 0.2s' }}
+                        onMouseEnter={e => e.target.style.color = 'var(--accent-hover, #60a5fa)'}
+                        onMouseLeave={e => e.target.style.color = 'var(--text, #f4f4f5)'}
                       >{c.value}</a>
                     ) : (
-                      <p style={{ color: 'var(--text)', fontSize: '0.88rem', fontFamily: 'Space Grotesk', fontWeight: 500 }}>{c.value}</p>
+                      <p style={{ color: 'var(--text, #f4f4f5)', fontSize: '0.88rem', fontFamily: 'Space Grotesk', fontWeight: 500 }}>{c.value}</p>
                     )}
                   </div>
                 </motion.div>
@@ -126,8 +139,13 @@ export default function Contact() {
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.15 }}
             className="glass-card p-5 sm:p-8 rounded-[18px]"
+            style={{
+              backgroundColor: 'var(--surface, #111113)',
+              border: '1px solid var(--line, #232327)',
+              boxShadow: 'none',
+            }}
           >
-            <h3 style={{ fontFamily: 'Space Grotesk', fontSize: '1.2rem', fontWeight: 700, marginBottom: '1.5rem' }}>
+            <h3 style={{ fontFamily: 'Space Grotesk', fontSize: '1.2rem', fontWeight: 700, marginBottom: '1.5rem', color: 'var(--text, #f4f4f5)' }}>
               Send a Message
             </h3>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
@@ -136,7 +154,7 @@ export default function Contact() {
                 { name: 'email', label: 'Your Email', type: 'email', placeholder: 'john@example.com' },
               ].map(field => (
                 <div key={field.name}>
-                  <label style={{ display: 'block', fontSize: '0.82rem', color: 'var(--text-muted)', marginBottom: '0.4rem', fontFamily: 'Space Grotesk' }}>
+                  <label style={{ display: 'block', fontSize: '0.82rem', color: 'var(--text-muted, #9a9aa3)', marginBottom: '0.4rem', fontFamily: 'Space Grotesk' }}>
                     {field.label}
                   </label>
                   <input
@@ -144,17 +162,17 @@ export default function Contact() {
                     onChange={handleChange} placeholder={field.placeholder}
                     style={{
                       width: '100%', padding: '0.75rem 1rem', borderRadius: '10px',
-                      background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.1)',
-                      color: 'var(--text)', fontSize: '0.9rem', fontFamily: 'Inter', outline: 'none',
+                      background: '#111113', border: '1px solid #232327',
+                      color: 'var(--text, #f4f4f5)', fontSize: '0.9rem', fontFamily: 'Inter', outline: 'none',
                       transition: 'border-color 0.2s',
                     }}
-                    onFocus={e => e.target.style.borderColor = 'rgba(124,58,237,0.5)'}
-                    onBlur={e => e.target.style.borderColor = 'rgba(255,255,255,0.1)'}
+                    onFocus={e => e.target.style.borderColor = 'var(--accent-border, rgba(59,130,246,0.30))'}
+                    onBlur={e => e.target.style.borderColor = 'var(--line, #232327)'}
                   />
                 </div>
               ))}
               <div>
-                <label style={{ display: 'block', fontSize: '0.82rem', color: 'var(--text-muted)', marginBottom: '0.4rem', fontFamily: 'Space Grotesk' }}>
+                <label style={{ display: 'block', fontSize: '0.82rem', color: 'var(--text-muted, #9a9aa3)', marginBottom: '0.4rem', fontFamily: 'Space Grotesk' }}>
                   Message
                 </label>
                 <textarea
@@ -162,12 +180,12 @@ export default function Contact() {
                   rows={4} placeholder="Hi Priyadharshini, I'd love to connect about..."
                   style={{
                     width: '100%', padding: '0.75rem 1rem', borderRadius: '10px',
-                    background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.1)',
-                    color: 'var(--text)', fontSize: '0.9rem', fontFamily: 'Inter', outline: 'none',
+                    background: '#111113', border: '1px solid #232327',
+                    color: 'var(--text, #f4f4f5)', fontSize: '0.9rem', fontFamily: 'Inter', outline: 'none',
                     resize: 'vertical', transition: 'border-color 0.2s',
                   }}
-                  onFocus={e => e.target.style.borderColor = 'rgba(124,58,237,0.5)'}
-                  onBlur={e => e.target.style.borderColor = 'rgba(255,255,255,0.1)'}
+                  onFocus={e => e.target.style.borderColor = 'var(--accent-border, rgba(59,130,246,0.30))'}
+                  onBlur={e => e.target.style.borderColor = 'var(--line, #232327)'}
                 />
               </div>
               <motion.button
@@ -177,22 +195,22 @@ export default function Contact() {
                 whileTap={{ scale: status === 'sending' ? 1 : 0.98 }}
                 style={{
                   width: '100%', padding: '0.85rem', borderRadius: '10px', border: 'none',
-                  background: status === 'success' 
-                    ? 'linear-gradient(135deg, #10b981, #059669)' 
+                  background: status === 'success'
+                    ? '#3b82f6'
                     : status === 'error'
-                    ? 'linear-gradient(135deg, #ef4444, #dc2626)'
-                    : 'linear-gradient(135deg, var(--violet), #5b21b6)',
+                    ? '#3b82f6'
+                    : 'var(--accent, #3b82f6)',
                   color: 'white', fontFamily: 'Space Grotesk', fontWeight: 600, fontSize: '0.95rem',
-                  cursor: status === 'sending' ? 'not-allowed' : 'pointer', 
+                  cursor: status === 'sending' ? 'not-allowed' : 'pointer',
                   display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem',
-                  transition: 'background 0.3s', boxShadow: '0 4px 20px rgba(124,58,237,0.3)',
+                  transition: 'background 0.3s', boxShadow: 'none',
                   opacity: status === 'sending' ? 0.8 : 1,
                 }}
               >
                 {status === 'sending' ? (
                   <>
-                    <motion.div 
-                      animate={{ rotate: 360 }} 
+                    <motion.div
+                      animate={{ rotate: 360 }}
                       transition={{ repeat: Infinity, duration: 1, ease: 'linear' }}
                       style={{ display: 'inline-flex' }}
                     >
