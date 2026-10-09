@@ -1,28 +1,11 @@
-import { motion } from 'framer-motion';
-import { useInView } from 'framer-motion';
+import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
 
 const skillCategories = [
-  {
-    title: 'Languages',
-    color: '#7c3aed',
-    skills: ['Python', 'SQL'],
-  },
-  {
-    title: 'AI Technologies',
-    color: '#06b6d4',
-    skills: ['RAG Systems', 'LLM Integration', 'Knowledge Graphs'],
-  },
-  {
-    title: 'Databases',
-    color: '#22d3ee',
-    skills: ['MongoDB', 'Neo4j', 'SQL', 'PL/SQL'],
-  },
-  {
-    title: 'Tools & Platforms',
-    color: '#8b5cf6',
-    skills: ['Git', 'GitHub', 'Jupyter Notebook', 'VS Code'],
-  },
+  { title: 'Languages', skills: ['Python', 'SQL'] },
+  { title: 'AI Technologies', skills: ['RAG Systems', 'LLM Integration', 'Knowledge Graphs'] },
+  { title: 'Databases', skills: ['MongoDB', 'Neo4j', 'SQL', 'PL/SQL'] },
+  { title: 'Tools & Platforms', skills: ['Git', 'GitHub', 'Jupyter Notebook', 'VS Code'] },
 ];
 
 export default function Skills() {
@@ -42,6 +25,7 @@ export default function Skills() {
           <h2 style={{ fontFamily: 'Space Grotesk', fontSize: 'clamp(2rem, 4vw, 3rem)', fontWeight: 700 }}>
             Skills & <span className="gradient-text">Technologies</span>
           </h2>
+          <div style={{ width: '60px', height: '4px', borderRadius: '4px', marginTop: '0.75rem', background: 'var(--accent)' }} />
         </motion.div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -52,21 +36,12 @@ export default function Skills() {
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: ci * 0.1 }}
               className="glass-card"
-              whileHover={{ y: -5 }}
-              style={{
-                borderRadius: '16px', padding: '1.5rem',
-                borderColor: `${cat.color}20`,
-                transition: 'transform 0.2s, border-color 0.2s, box-shadow 0.2s',
-              }}
+              whileHover={{ y: -4 }}
+              style={{ borderRadius: '14px', padding: '1.5rem' }}
             >
-              <div style={{
-                display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1.25rem',
-              }}>
-                <div style={{
-                  width: '10px', height: '10px', borderRadius: '50%',
-                  background: cat.color, boxShadow: `0 0 12px ${cat.color}`,
-                }} />
-                <h3 style={{ fontFamily: 'Space Grotesk', fontWeight: 700, fontSize: '1rem', color: cat.color }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.7rem', marginBottom: '1.1rem' }}>
+                <div style={{ width: '8px', height: '8px', borderRadius: '50%', background: 'var(--accent)' }} />
+                <h3 style={{ fontFamily: 'Space Grotesk', fontWeight: 700, fontSize: '1rem', color: 'var(--text)' }}>
                   {cat.title}
                 </h3>
               </div>
@@ -75,13 +50,12 @@ export default function Skills() {
                 {cat.skills.map((skill, si) => (
                   <motion.span
                     key={skill}
-                    initial={{ opacity: 0, scale: 0.9 }}
+                    initial={{ opacity: 0, scale: 0.95 }}
                     animate={inView ? { opacity: 1, scale: 1 } : {}}
                     transition={{ duration: 0.3, delay: ci * 0.1 + si * 0.05 }}
                     style={{
-                      padding: '0.4rem 0.85rem', borderRadius: '20px',
-                      background: `${cat.color}12`,
-                      border: `1px solid ${cat.color}25`,
+                      padding: '0.4rem 0.85rem', borderRadius: '8px',
+                      background: 'var(--bg)', border: '1px solid var(--line)',
                       color: 'var(--text)', fontSize: '0.82rem',
                       fontFamily: 'Space Grotesk', fontWeight: 500,
                     }}
