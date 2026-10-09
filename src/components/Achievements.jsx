@@ -6,7 +6,7 @@ import { Users, Award, Trophy, Medal } from 'lucide-react';
 const achievements = [
   {
     place: '1st',
-    emoji: '🏆',
+
     event: 'Extempore Event',
     venue: 'Kalasalingam University, Srivilliputhur',
     color: '#f59e0b',
@@ -15,7 +15,7 @@ const achievements = [
   },
   {
     place: '2nd',
-    emoji: '🥈',
+    
     event: 'Technical Debate Event',
     venue: 'Sri Krishna College of Technology, Coimbatore',
     color: '#94a3b8',
