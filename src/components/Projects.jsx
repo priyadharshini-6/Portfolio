@@ -4,205 +4,69 @@ import { Brain, BookOpen, UserCheck } from 'lucide-react';
 
 const FILTERS = ['All', 'Full Stack', 'AI'];
 
-/*
-  Section types:
-  - text:   items = [paragraph, ...]
-  - list:   items = [{ t: 'bold lead', d: 'description' } | 'plain line', ...]
-  - steps:  items = ['step', ...]  (numbered, used only for real sequences)
-*/
 const projects = [
   {
     icon: <UserCheck size={26} />,
     title: 'IntelliMatch AI',
-    subtitle: 'Full-Stack Developer & AI Integrator',
     domain: 'Full Stack',
+    tagline: 'End-to-end AI recruitment platform matching candidates to internships with sub-5s latency.',
+    problem:
+      'Eliminates manual application screening by parsing PDF resumes, evaluating candidate fit against job requirements, and highlighting actionable skill gaps.',
+    capabilities: [
+      '0–100% deterministic fit scoring',
+      'Blind recruiter screening',
+      'Automated cover letters',
+      'Dual-role RBAC dashboards',
+    ],
+    tags: ['Next.js', 'React', 'Tailwind CSS', 'Gemini API', 'PDF Parser', 'RBAC'],
     color: '#a78bfa',
     glow: 'rgba(167,139,250,0.15)',
-    sections: [
-      {
-        heading: 'Overview',
-        type: 'text',
-        items: [
-          'IntelliMatch AI is an AI-driven internship matching platform built to remove guesswork from early-career hiring. Candidates often struggle to judge how their skills measure up against a job listing, while recruiters have to sift through hundreds of unranked applications.',
-          'The platform closes that gap with instant compatibility scoring, targeted skill-gap insights and management tools for recruiters, all in one end-to-end application.',
-        ],
-      },
-      {
-        heading: 'Key features',
-        type: 'list',
-        items: [
-          { t: 'Automated resume parsing', d: 'Extracts text and technical competencies from uploaded PDF resumes and turns them into structured candidate profiles.' },
-          { t: 'Deterministic AI scoring engine', d: 'Uses the Gemini API to compare a candidate with a job listing and returns a 0–100% compatibility score with clear missing-skill recommendations.' },
-          { t: 'Candidate portal', d: 'Track applications, inspect the compatibility breakdown and generate a tailored, role-specific cover letter in one click.' },
-          { t: 'Recruiter portal', d: 'Manage listings, rank applicants automatically by AI score and use blind-screening workflows to evaluate candidates objectively and reduce hiring bias.' },
-        ],
-      },
-      {
-        heading: 'Engineering highlights',
-        type: 'list',
-        items: [
-          'Structured JSON output constraints on Gemini keep every response schema-compliant and bring match evaluation under 5 seconds.',
-          'Role-Based Access Control (RBAC) separates the student and recruiter dashboards.',
-          'Defensive schema validation and cached score lookups avoid redundant LLM calls.',
-          'Responsive, accessible UI built with Next.js, React and Tailwind CSS, using optimistic updates and loading states during file extraction and inference.',
-        ],
-      },
-    ],
-    tags: ['Next.js', 'React', 'Tailwind CSS', 'Gemini API', 'RBAC', 'PDF Parsing'],
   },
   {
     icon: <BookOpen size={26} />,
     title: 'LearnMate',
-    subtitle: 'Personalized Study Companion',
     domain: 'AI',
+    tagline: 'Interactive, document-grounded AI companion tailored for personalized study workflows.',
+    problem:
+      'Solves fragmented studying by turning raw lecture notes and PDFs into structured learning paths with interactive testing tools.',
+    capabilities: [
+      'Context-aware document Q&A',
+      'Automatic quiz and flashcard synthesis',
+      'Performance diagnostics',
+      'Daily retention tracking',
+    ],
+    tags: ['React', 'Node.js', 'Express', 'Supabase', 'Gemini API', 'OpenRouter', 'Tailwind CSS'],
     color: '#06b6d4',
     glow: 'rgba(6,182,212,0.15)',
-    sections: [
-      {
-        heading: 'Overview',
-        type: 'text',
-        items: [
-          'LearnMate is an AI-powered personalized learning assistant that helps users learn more effectively, track their progress and stay consistent in their studies.',
-          'It combines intelligent understanding of study material with adaptive learning features such as quizzes, flashcards and progress tracking, so everything happens in one interactive experience.',
-        ],
-      },
-      {
-        heading: 'Key features',
-        type: 'list',
-        items: [
-          { t: 'AI-powered learning', d: 'Uses advanced AI models to generate context-aware explanations from your own study materials.' },
-          { t: 'Document-based learning', d: 'Upload PDFs, notes or text, and the system extracts and understands the key concepts automatically.' },
-          { t: 'Quiz generation', d: 'Automatically creates quizzes from uploaded content so you can check how well you understand it.' },
-          { t: 'Flashcards', d: 'Turns important concepts into quick revision cards for better memory retention.' },
-          { t: 'AI chat assistant', d: 'Ask questions about your study material and get instant, accurate answers.' },
-          { t: 'Daily streaks and progress tracking', d: 'Tracks daily activity and performance over time, and points out weak areas to work on.' },
-        ],
-      },
-      {
-        heading: 'How it works',
-        type: 'steps',
-        items: [
-          'The user uploads study material as a PDF or text.',
-          'The system extracts and processes the content.',
-          'AI analyzes and organizes the information.',
-          'The user learns through chat, quizzes or flashcards.',
-          'Progress is tracked and the learning experience adapts accordingly.',
-        ],
-      },
-      {
-        heading: 'Planned improvements',
-        type: 'list',
-        items: [
-          'Learner-level customization from beginner to expert.',
-          'Faster real-time responses.',
-          'Voice-based interaction.',
-          'Better analytics and prediction.',
-          'Mobile application support.',
-        ],
-      },
-    ],
-    tags: ['React.js', 'Tailwind CSS', 'Node.js', 'Express.js', 'Gemini API', 'OpenRouter API', 'Supabase'],
   },
   {
     icon: <Brain size={26} />,
-    title: 'AI-Based Knowledge Graph Builder',
-    subtitle: 'AI Enterprise Intelligence Platform',
+    title: 'AI Knowledge Graph Builder',
     domain: 'AI',
+    tagline: 'Enterprise intelligence platform combining graph databases and RAG for contextual insight discovery.',
+    problem:
+      'Unlocks fragmented organizational data by extracting complex business entities and mapping them into an interconnected, queryable knowledge network.',
+    capabilities: [
+      'Automated entity-relation extraction',
+      'Hybrid Vector + Graph retrieval (Graph-RAG)',
+      'Low-latency local inference',
+    ],
+    tags: ['Python', 'Neo4j', 'FAISS', 'Ollama', 'Chainlit', 'LangChain', 'RAG Pipelines'],
     color: '#7c3aed',
     glow: 'rgba(124,58,237,0.15)',
-    sections: [
-      {
-        heading: 'Overview',
-        type: 'text',
-        items: [
-          'An enterprise intelligence system that uses data analytics and generative AI workflows to streamline decision-making and pull business insights out of complex organizational data.',
-          'It processes structured, semi-structured and unstructured data from multiple sources, extracts entities and relationships with AI-driven pipelines, and builds a knowledge graph in Neo4j that can be queried through a RAG-based system.',
-        ],
-      },
-      {
-        heading: 'What I built',
-        type: 'list',
-        items: [
-          { t: 'Data ingestion pipelines', d: 'Process and analyze organizational data from different sources and formats.' },
-          { t: 'Automated knowledge graph generation', d: 'AI extracts entities and relationships and stores them as a connected graph.' },
-          { t: 'Intelligent retrieval', d: 'Graph and RAG-based retrieval surfaces actionable insights from the data.' },
-          { t: 'Full-stack interface and backend services', d: 'Manage user queries, orchestrate AI model inference and present results in a clean analytical view.' },
-        ],
-      },
-      {
-        heading: 'Optimization',
-        type: 'list',
-        items: [
-          'Tuned the RAG retrieval pipeline for faster response times and more relevant answers.',
-          'Optimized model response latency and data formatting to produce reliable structured outputs for enterprise deployment.',
-        ],
-      },
-    ],
-    tags: ['Python', 'Neo4j', 'RAG', 'FAISS', 'Chainlit', 'Ollama', 'LLM Integration', 'Knowledge Graphs'],
   },
 ];
 
-function Section({ section, color }) {
+function Block({ title, color, children }) {
   return (
     <div style={{ marginBottom: '1.6rem' }}>
       <h4 style={{
         fontFamily: 'Space Grotesk', fontSize: '1rem', fontWeight: 700,
-        color, marginBottom: '0.75rem',
+        color, marginBottom: '0.7rem',
       }}>
-        {section.heading}
+        {title}
       </h4>
-
-      {section.type === 'text' && (
-        <div style={{ display: 'grid', gap: '0.75rem', maxWidth: '820px' }}>
-          {section.items.map(t => (
-            <p key={t} style={{ color: 'var(--text-muted)', lineHeight: 1.8, fontSize: '0.95rem' }}>
-              {t}
-            </p>
-          ))}
-        </div>
-      )}
-
-      {section.type === 'list' && (
-        <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'grid', gap: '0.65rem', maxWidth: '820px' }}>
-          {section.items.map(item => {
-            const isObj = typeof item === 'object';
-            const key = isObj ? item.t : item;
-            return (
-              <li key={key} style={{ display: 'flex', gap: '0.75rem', fontSize: '0.92rem', lineHeight: 1.75 }}>
-                <span style={{
-                  width: '6px', height: '6px', borderRadius: '50%', flexShrink: 0,
-                  background: color, marginTop: '0.7rem',
-                }} />
-                <span style={{ color: 'var(--text-muted)' }}>
-                  {isObj ? (
-                    <>
-                      <strong style={{ color: 'var(--text)', fontWeight: 600 }}>{item.t}.</strong> {item.d}
-                    </>
-                  ) : item}
-                </span>
-              </li>
-            );
-          })}
-        </ul>
-      )}
-
-      {section.type === 'steps' && (
-        <ol style={{ listStyle: 'none', padding: 0, margin: 0, display: 'grid', gap: '0.65rem', maxWidth: '820px' }}>
-          {section.items.map((step, i) => (
-            <li key={step} style={{ display: 'flex', gap: '0.85rem', alignItems: 'flex-start' }}>
-              <span style={{
-                width: '24px', height: '24px', borderRadius: '50%', flexShrink: 0,
-                display: 'flex', alignItems: 'center', justifyContent: 'center',
-                fontSize: '0.75rem', fontWeight: 700, fontFamily: 'Space Grotesk',
-                color, background: `${color}15`, border: `1px solid ${color}30`,
-              }}>
-                {i + 1}
-              </span>
-              <span style={{ color: 'var(--text-muted)', fontSize: '0.92rem', lineHeight: 1.75 }}>{step}</span>
-            </li>
-          ))}
-        </ol>
-      )}
+      {children}
     </div>
   );
 }
@@ -333,10 +197,12 @@ export default function Projects() {
                   </div>
 
                   <div style={{ flex: 1, minWidth: '220px' }}>
-                    <h3 style={{ fontFamily: 'Space Grotesk', fontSize: '1.4rem', fontWeight: 700, marginBottom: '0.2rem' }}>
+                    <h3 style={{ fontFamily: 'Space Grotesk', fontSize: '1.4rem', fontWeight: 700, marginBottom: '0.3rem' }}>
                       {p.title}
                     </h3>
-                    <p style={{ color: p.color, fontSize: '0.88rem', fontWeight: 600 }}>{p.subtitle}</p>
+                    <p style={{ color: 'var(--text-muted)', fontSize: '0.92rem', lineHeight: 1.6, maxWidth: '720px' }}>
+                      {p.tagline}
+                    </p>
                   </div>
 
                   <span style={{
@@ -348,30 +214,41 @@ export default function Projects() {
                   </span>
                 </div>
 
-                {/* Detailed content */}
                 <div style={{ position: 'relative' }}>
-                  {p.sections.map(s => (
-                    <Section key={s.heading} section={s} color={p.color} />
-                  ))}
-                </div>
+                  <Block title="Problem & solution" color={p.color}>
+                    <p style={{ color: 'var(--text-muted)', lineHeight: 1.8, fontSize: '0.95rem', maxWidth: '820px' }}>
+                      {p.problem}
+                    </p>
+                  </Block>
 
-                {/* Tech stack at the bottom */}
-                <div style={{ position: 'relative', marginTop: '0.5rem' }}>
-                  <h4 style={{
-                    fontFamily: 'Space Grotesk', fontSize: '1rem', fontWeight: 700,
-                    color: p.color, marginBottom: '0.75rem',
-                  }}>
-                    Tech stack
-                  </h4>
-                  <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
-                    {p.tags.map(tag => (
-                      <span key={tag} style={{
-                        padding: '0.35rem 0.8rem', borderRadius: '16px', fontSize: '0.78rem',
-                        background: `${p.color}10`, border: `1px solid ${p.color}20`,
-                        color: 'var(--text-muted)', fontFamily: 'Space Grotesk', fontWeight: 500,
-                      }}>{tag}</span>
-                    ))}
-                  </div>
+                  <Block title="Key capabilities" color={p.color}>
+                    <ul style={{
+                      listStyle: 'none', padding: 0, margin: 0,
+                      display: 'grid', gap: '0.6rem', maxWidth: '820px',
+                    }}>
+                      {p.capabilities.map(c => (
+                        <li key={c} style={{ display: 'flex', gap: '0.75rem', fontSize: '0.93rem', lineHeight: 1.7 }}>
+                          <span style={{
+                            width: '6px', height: '6px', borderRadius: '50%', flexShrink: 0,
+                            background: p.color, marginTop: '0.68rem',
+                          }} />
+                          <span style={{ color: 'var(--text-muted)' }}>{c}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </Block>
+
+                  <Block title="Tech stack" color={p.color}>
+                    <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
+                      {p.tags.map(tag => (
+                        <span key={tag} style={{
+                          padding: '0.35rem 0.8rem', borderRadius: '16px', fontSize: '0.78rem',
+                          background: `${p.color}10`, border: `1px solid ${p.color}20`,
+                          color: 'var(--text-muted)', fontFamily: 'Space Grotesk', fontWeight: 500,
+                        }}>{tag}</span>
+                      ))}
+                    </div>
+                  </Block>
                 </div>
               </motion.div>
             ))}
